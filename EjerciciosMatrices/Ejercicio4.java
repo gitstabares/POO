@@ -64,6 +64,7 @@ public class Ejercicio4 {
                 System.out.println("Opción no válida");
                 break;
         }
+        input.close();
         System.out.println("El resultado es: " + resultado);
     }
 }
