@@ -2,10 +2,11 @@ package EjerciciosMatrices;
 
 import java.util.Random;
 public class Ejercicio5 {
-    public static void main(String[] args) {
+    public static int[][] RandomMatrix()
+    {
         int number;
         int upperLimit = 10;
-        int[][] m = new int[3][3];
+        int[][] matrix = new int[3][3];
         int[] seen = new int[upperLimit];
         Random r = new Random();
         for (int i=0; i<3; i++)
@@ -18,9 +19,10 @@ public class Ejercicio5 {
                 }
                 else{
                     seen[number-1] = number;
-                    m[i][j] = number;
+                    matrix[i][j] = number;
                 }
             }
         }
+        return matrix;
     }
 }
