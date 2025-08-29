@@ -3,22 +3,22 @@ package BankAccount;
 import java.util.Random;
 
 public class BankAccount {
-    static private Random r;
+    static private Random r = new Random();
     private String accountNumber;
     private double balance;
     BankAccount()
     {
         accountNumber = Double.toString(r.nextDouble(10e16,10e17));
     }
-    public double Deposit(double amount) throws Exception
+    public double deposit(double amount) throws Exception
     {
-        ValidAmount(amount);
+        validAmount(amount);
         balance += amount;
         return balance;
     }
-    public double Withdraw(double amount) throws Exception
+    public double withdraw(double amount) throws Exception
     {
-        ValidAmount(amount);
+        validAmount(amount);
         if (amount > balance) throw new Exception("No tiene ese monto en la cuenta");
         balance -= amount;
         return balance;
@@ -31,7 +31,7 @@ public class BankAccount {
     {
         return accountNumber;
     }
-    private void ValidAmount(double amount) throws Exception
+    private void validAmount(double amount) throws Exception
     {
         if (amount <= 0)  throw new Exception("No se admiten montos negativos o iguales a cero");
     }
