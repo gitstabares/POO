@@ -1,4 +1,4 @@
-package BankAccount;
+package TallerPOO;
 
 import java.util.Random;
 
