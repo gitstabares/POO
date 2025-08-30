@@ -46,5 +46,25 @@ public class Master {
             System.out.println(e.getMessage());
         }
         //#endregion
+        //#region Movie
+        Movie movie1 = new Movie();
+        try{
+            movie1.setGenre("Musical");
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        Movie movie2 = new Movie();
+        try{
+            movie2.setTitle("Inception");
+            movie2.setGenre("Acción");
+            movie2.setRating(4.8);
+            System.out.println("Título: " + movie2.getTitle());
+            System.out.println("Género: " + movie2.getGenre());
+            System.out.println("Calificación: " + movie2.getRating());
+            System.out.println("¿Recomendada? " + (movie2.isRecommended() ? "Sí" : "No"));
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        //#endregion Movie
     }
 }
