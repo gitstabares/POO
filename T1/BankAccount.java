@@ -1,4 +1,4 @@
-package TallerPOO;
+package T1;
 
 import java.util.Random;
 

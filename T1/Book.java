@@ -1,4 +1,4 @@
-package TallerPOO;
+package T1;
 
 public class Book {
     private String title = "Sin título";

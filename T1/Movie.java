@@ -1,4 +1,4 @@
-package TallerPOO;
+package T1;
 
 public class Movie {
     private static String[] genres = {"Acción","Comedia","Drama","Documental","Terror"};
