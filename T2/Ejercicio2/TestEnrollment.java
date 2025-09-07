@@ -1,8 +1,5 @@
 package T2.Ejercicio2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TestEnrollment {
     public static void main(String[] args) {
         Student student1 = new Student("Marie Curie", 20);
