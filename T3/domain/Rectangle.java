@@ -2,7 +2,7 @@ package T3.domain;
 
 public class Rectangle extends Square {
     private float width;
-    Rectangle(int id, float x, float y, float height, float width) {
+    public Rectangle(int id, float x, float y, float height, float width) {
         super(id, x, y, height);
         this.width = width;
     }

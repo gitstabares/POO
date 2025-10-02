@@ -3,7 +3,7 @@ package T3.domain;
 public abstract class Shape {
     private int id;
     private float x,y;
-    Shape(int id, float x, float y)
+    protected Shape(int id, float x, float y)
     {
         this.id = id;
         this.x = x;
