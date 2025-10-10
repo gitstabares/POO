@@ -2,8 +2,8 @@ package T3.domain;
 
 public class Square extends Shape {
     private float height;
-    public Square(int id, float x, float y, float sideLength) {
-        super(id, x, y);
+    public Square(float x, float y, float sideLength) {
+        super(x, y);
         this.height = sideLength;
     }
     public float getHeight() {

@@ -1,11 +1,12 @@
 package T3.domain;
 
 public abstract class Shape {
+    static private int avalaibleID = 1;
     private int id;
     private float x,y;
-    protected Shape(int id, float x, float y)
+    protected Shape(float x, float y)
     {
-        this.id = id;
+        this.id = avalaibleID++;
         this.x = x;
         this.y = y;
     }
@@ -13,9 +14,6 @@ public abstract class Shape {
     public abstract float getPerimeter();
     public int getID() {
         return id;
-    }
-    public void setID(int id) {
-        this.id = id;
     }
     public float getX() {
         return x;

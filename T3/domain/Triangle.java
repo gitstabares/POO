@@ -2,8 +2,8 @@ package T3.domain;
 
 public class Triangle extends Shape {
     private float[] sides;
-    public Triangle(int id, float x, float y, float side1, float side2, float side3) {
-        super(id, x, y);
+    public Triangle(float x, float y, float side1, float side2, float side3) {
+        super(x, y);
         sides = new float[]{side1, side2, side3};
     }
     public void setSides(float side1, float side2, float side3) {
