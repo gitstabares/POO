@@ -2,8 +2,8 @@ package T3.domain;
 
 public class Rectangle extends Square {
     private float width;
-    Rectangle(int id, float x, float y, float height, float width) {
-        super(id, x, y, height);
+    public Rectangle(float x, float y, float height, float width) {
+        super(x, y, height);
         this.width = width;
     }
     @Override

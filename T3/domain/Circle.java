@@ -2,9 +2,9 @@ package T3.domain;
 
 public class Circle extends Shape{
     private float minorRadius;
-    Circle(int id, float x, float y, float radius)
+    public Circle(float x, float y, float radius)
     {
-        super(id, x, y);
+        super(x, y);
         this.minorRadius = radius;
     }
     public void setMinorRadius(float minorRadius) {
@@ -23,6 +23,6 @@ public class Circle extends Shape{
         return (float) (Math.PI * getMajorRadius() * getMinorRadius());
     }
     public float getPerimeter() {
-        return (float) (2 * Math.PI * getMinorRadius());
+        return (float) (Math.PI * (3 * (getMajorRadius() + getMinorRadius()) - Math.sqrt((3 * getMajorRadius() + getMinorRadius()) * (getMajorRadius() + 3 * getMinorRadius()))));
     }
 }
