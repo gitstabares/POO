@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Reference {
@@ -8,6 +9,12 @@ public class Reference {
     private int year = 0;
     private String doi = "";
     private String abstractText = "";
+        public Reference(String title, String author, String venue, int year) {
+        this.title = title;
+        this.authors = Arrays.asList(author);
+        this.venue = venue;
+        this.year = year;
+    }
     public Reference(String title, List<String> authors, String venue, int year) {
         this.title = title;
         this.authors = authors;

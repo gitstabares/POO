@@ -5,8 +5,8 @@ import java.util.List;
 public class TestRISEncoder {
     public static void main(String[] args) {
         List<Reference> references = createTestData();
-        RISEncoder<Reference> risEncoder = new ReferenceRISEncoder();
-        String risContent = risEncoder.encodeAll(references);
+        RISEncoder<Reference> risEncoder = new RISEncoder<>();
+        String risContent = risEncoder.encode(references);
         FileUtils.saveToFile("References.ris", risContent);
     }
     private static List<Reference> createTestData() {

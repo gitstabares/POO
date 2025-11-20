@@ -4,11 +4,10 @@ public class RISEncoder<T> implements Encodable<T> {
     @Override
     public String encode(T type) {
         String output = createType()+
-                        createTitle(getFields(type)[0])+
-                        createAuthor(getFields(type)[1])+
-                        createYear(getFields(type)[2])+
-                        createJournal(getFields(type)[3])+
-                        createEnd();
+                        createTitle(getFieldValues(type)[0])+
+                        createAuthor(getFieldValues(type)[1])+
+                        createJournal(getFieldValues(type)[3])+
+                        createYear(getFieldValues(type)[2]);
         return output;
     }
     @Override
@@ -35,6 +34,14 @@ public class RISEncoder<T> implements Encodable<T> {
     {
         return createField("AU", author);
     }
+    private String createAuthor(List<String> authors)
+    {
+        String output = "";
+        for (String author : authors) {
+            output += createAuthor(author);
+        }
+        return output;
+    }
     private String createYear(String year)
     {
         return createField("PY", year);
@@ -44,8 +51,21 @@ public class RISEncoder<T> implements Encodable<T> {
         if (journal.length() > 5) return createField("JF", journal);
         else return createField("JA", journal);
     }
+    private String createDOI(String doi)
+    {
+        return createField("DO", doi);
+    }
+    private String createAbstractText(String abstractText)
+    {
+        return createField("AB", abstractText);
+    }
     private String createEnd()
     {
         return createField("ER", "");
+    }
+    @Override
+    public String[] getFieldValues(T item) {
+        String[] fields = {item.getTitle(), item .};
+        return fields;
     }
 }
