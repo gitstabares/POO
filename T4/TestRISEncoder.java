@@ -5,7 +5,22 @@ import java.util.List;
 public class TestRISEncoder {
     public static void main(String[] args) {
         List<Reference> references = createTestData();
-        RISEncoder<Reference> risEncoder = new RISEncoder<>();
+        RISEncoder<Reference> risEncoder = new RISEncoder<Reference>() {
+            public String[] getFields(Reference item) {
+                Reference ref = (Reference) item;
+                List<String> fields = new ArrayList<>();
+                fields.add(createType());
+                fields.add(createTitle(ref.getTitle()));
+                for (String author : ref.getAuthors()) {
+                    fields.add(createAuthor(author));
+                }
+                fields.add(createYear(ref.getYear()));
+                fields.add(createJournal(ref.getVenue()));
+                fields.add(createDOI(ref.getDoi()));
+                fields.add(createField("ER", ""));
+                return fields.toArray(new String[0]);
+            };
+        };
         String risContent = risEncoder.encode(references);
         FileUtils.saveToFile("References.ris", risContent);
     }

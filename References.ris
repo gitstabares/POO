@@ -1,0 +1,94 @@
+TY  - JOUR
+TI  - Deep Learning
+AU  - GoodFellow, Ian
+AU  - Bengio, Yoshua
+AU  - Courville, Aaron
+PY  - 2016
+JF  - MIT Press
+ER  - 
+
+TY  - JOUR
+TI  - Reinforcement Learning: An Introduction
+AU  - Sutton, Richard
+AU  - Barto, Andrew
+PY  - 2018
+JF  - MIT Press
+ER  - 
+
+TY  - JOUR
+TI  - EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
+AU  - Tan, Mingxing
+AU  - Le, Quoc V.
+PY  - 2019
+JF  - International Conference on Machine Learning
+ER  - 
+
+TY  - JOUR
+TI  - ImageNet Classification with Deep Convolutional Neural Networks
+AU  - Krizhevsky, Alex
+AU  - Sutskever, Ilya
+AU  - Hinton, Geoffrey E.
+PY  - 2012
+JA  - NIPS
+ER  - 
+
+TY  - JOUR
+TI  - Attention Is All You Need
+AU  - Vaswani, Ashish
+AU  - Shazeer, Noam
+AU  - Parmar, Niki
+AU  - Uszkoreit, Jakob
+AU  - Jones, Llion
+AU  - Gomez, Aidan N.
+AU  - Kaiser, Łukasz
+AU  - Polosukhin, Illia
+PY  - 2017
+JA  - NIPS
+ER  - 
+
+TY  - JOUR
+TI  - Deep Residual Learning for Image Recognition
+AU  - He, Kaiming
+AU  - Zhang, Xiangyu
+AU  - Ren, Shaoqing
+AU  - Sun, Jian
+PY  - 2016
+JA  - CPVR
+ER  - 
+
+TY  - JOUR
+TI  - Long Short-Term Memory
+AU  - Hochreiter, Sepp
+AU  - Schmidhuber, Jürgen
+PY  - 1997
+JF  - Neural Computation
+ER  - 
+
+TY  - JOUR
+TI  - Efficient Estimation of Word Representations in Vector Space
+AU  - Mikolov, Tomas
+AU  - Chen, Kai
+AU  - Corrado, Greg
+AU  - Dean, Jeffrey
+PY  - 2013
+JA  - arXiv
+ER  - 
+
+TY  - JOUR
+TI  - Intelligence Without Representation
+AU  - Brooks, Rodney A.
+PY  - 1991
+JF  - Artificial Intelligence Journal
+ER  - 
+
+TY  - JOUR
+TI  - Reinforcement Learning for RoboCup Soccer Keepaway
+AU  - Stone, Peter
+AU  - Kuhlmann, Greg
+AU  - Taylor, Matthew E.
+AU  - Kovarsky, Alexey
+AU  - Liu, Yngvi
+AU  - Riedmiller, Martin
+PY  - 2005
+JF  - Adaptive Behavior
+ER  -

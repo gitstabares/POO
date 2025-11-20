@@ -1,14 +1,22 @@
 import java.util.List;
 
-public class RISEncoder<T> implements Encodable<T> {
+public abstract class RISEncoder<T> implements Encodable<T> {
     @Override
-    public String encode(T type) {
-        String output = createType()+
-                        createTitle(getFieldValues(type)[0])+
-                        createAuthor(getFieldValues(type)[1])+
-                        createJournal(getFieldValues(type)[3])+
-                        createYear(getFieldValues(type)[2]);
-        return output;
+    public String[] getFieldNames() {
+        return null;
+    }
+    @Override
+    public Object[] getFieldValues(T item) {
+        return null;
+    }
+    @Override
+    public String encode(T item) {
+        String[] fields = getFields(item);
+        StringBuilder sb = new StringBuilder();
+        for (String field : fields) {
+            sb.append(field);
+        }
+        return sb.toString();
     }
     @Override
     public String encode(List<T> list) {
@@ -16,56 +24,46 @@ public class RISEncoder<T> implements Encodable<T> {
         for (T record : list) {
             output += encode(record) + "\n";
         }
-        return output;
+        return output.trim();
     }
     @Override
     public String createField(String name, Object value) {
+        if (value.toString().isEmpty() && !name.equals("ER")) {
+            return "";
+        }
         return name + "  - " + value.toString() + "\n";
     }
-    private String createType()
+    public String createType()
     {
         return createField("TY", "JOUR");
     }
-    private String createTitle(String title)
+    public String createTitle(Object item)
     {
-        return createField("TI", title);
+        return createField("TI", item);
     }
-    private String createAuthor(String author)
+    public String createAuthor(Object item)
     {
-        return createField("AU", author);
+        return createField("AU", item);
     }
-    private String createAuthor(List<String> authors)
+    public String createYear(Object item)
     {
-        String output = "";
-        for (String author : authors) {
-            output += createAuthor(author);
-        }
-        return output;
+        return createField("PY", item);
     }
-    private String createYear(String year)
+    public String createJournal(Object item)
     {
-        return createField("PY", year);
+        if (item.toString().length() > 5) return createField("JF", item);
+        else return createField("JA", item);
     }
-    private String createJournal(String journal)
+    public String createDOI(Object item)
     {
-        if (journal.length() > 5) return createField("JF", journal);
-        else return createField("JA", journal);
+        return createField("DO", item);
     }
-    private String createDOI(String doi)
+    public String createAbstractText(Object item)
     {
-        return createField("DO", doi);
+        return createField("AB", item);
     }
-    private String createAbstractText(String abstractText)
-    {
-        return createField("AB", abstractText);
-    }
-    private String createEnd()
+    public String createEnd()
     {
         return createField("ER", "");
-    }
-    @Override
-    public String[] getFieldValues(T item) {
-        String[] fields = {item.getTitle(), item .};
-        return fields;
     }
 }
